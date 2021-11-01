@@ -1,23 +1,13 @@
 <img src="square-logo.svg" width=255 height=255 align="right">
 
-#  Rasa 2.x Form Examples
-
-## Archived 
-
-This repository contains a collection of tutorials that will help you understand forms. Each example is self contained and is part of a series of videos on our youtube channel. Note that all the demos here are built with Rasa 2.3 in mind. These examples won't work for Rasa 3.x onward. 
+#  Rasa 3.x Form Examples
 
 ## Installation 
 
 To run all the examples here you'll need to install Rasa, preferably in a virtualenv in the root directory. 
 
 ```
-python -m pip install rasa==2.3
-```
-
-If you'd also like to use Rasa X, you can install this via; 
-
-```
-python -m pip install rasa-x --upgrade -i https://pypi.rasa.com/simple
+python -m pip install rasa==3.0
 ```
 
 ## 1. Custom Actions
@@ -59,7 +49,3 @@ Code can be found in the `05-entities-and-forms` folder.
 The user might give the response in a sentence, in which case we'll want to detect entities instead of grabbing the full text.
 
 Code can be found in the `06-expanding-forms` folder.
-
-## 7. Elaborate Name Form Example
-
-In this final example we'll show an elaborate example of a form that can ask for names.
