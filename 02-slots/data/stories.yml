@@ -62,3 +62,16 @@ stories:
   - action: action_say_name
   - intent: goodbye
   - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: tell_name
+  - action: utter_ask_name
+  - intent: give_name
+  - action: action_receive_name
+  - slot_was_set:
+    - name: vincent

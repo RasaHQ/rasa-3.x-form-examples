@@ -1,34 +1,24 @@
 version: '2.0'
-config:
-  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- goodbye:
-    use_entities: true
-- greet:
-    use_entities: true
-- tell_name:
-    use_entities: true
-- repeat_name:
-    use_entities: true
-- give_name:
-    use_entities: true
-- affirm:
-    use_entities: true
-- deny:
-    use_entities: true
-- mood_great:
-    use_entities: true
-- mood_unhappy:
-    use_entities: true
-- bot_challenge:
-    use_entities: true
-entities: []
+- greet
+- mood_great
+- tell_name
+- give_name
+- goodbye
+- repeat_name
+- affirm
+- deny
+- mood_unhappy
+- bot_challenge
 slots:
   name:
     type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -51,5 +41,4 @@ actions:
 - utter_ask_name
 - utter_goodbye
 - utter_greet
-forms: {}
-e2e_actions: []
+- utter_happy
