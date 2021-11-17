@@ -15,15 +15,27 @@ intents:
 
 forms:
   name_form:
-    first_name:
-    - type: from_text
-    last_name:
-    - type: from_text
+    required_slots:
+      - first_name
+      - last_name
+
 slots:
   first_name:
     type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: name_form
+           requested_slot: first_name
   last_name:
     type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: name_form
+           requested_slot: last_name
 
 responses:
   utter_greet:
