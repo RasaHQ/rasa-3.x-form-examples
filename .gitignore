@@ -1,6 +1,7 @@
 .vscode
 .idea
 */models/*
+*/.rasa/*
 .DS_Store
 venv
 **/__pycache__
