@@ -8,3 +8,4 @@ venv
 
 **/*.db*
 */story_graph.dot
+*/.rasa
