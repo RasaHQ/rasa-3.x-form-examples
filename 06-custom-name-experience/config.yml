@@ -1,3 +1,5 @@
+recipe: default.v1
+
 language: en
 
 pipeline:
@@ -9,12 +11,12 @@ pipeline:
     analyzer: char_wb
     min_ngram: 1
     max_ngram: 4
-  - name: rasa_nlu_examples.classifiers.SparseNaiveBayesIntentClassifier
-    alpha: 0.000001
+  - name: DIETClassifier
+    epochs: 100
 
 policies:
   - name: MemoizationPolicy
   - name: TEDPolicy
     max_history: 5
-    epochs: 10
+    epochs: 100
   - name: RulePolicy

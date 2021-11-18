@@ -15,22 +15,19 @@ class ValidateNameForm(FormValidationAction):
     
     async def required_slots(
         self,
-        slots_mapped_in_domain: List[Text],
+        domain_slots: List[Text],
         dispatcher: "CollectingDispatcher",
         tracker: "Tracker",
         domain: "DomainDict",
     ) -> Optional[List[Text]]:
         first_name = tracker.slots.get("first_name")
+        print(f"required slots gets called, domain_slots:{domain_slots} ")
         if first_name is not None:
             if first_name not in names:
-                return ["name_spelled_correctly"] + slots_mapped_in_domain
-        return slots_mapped_in_domain
-    
-    async def extract_name_spelled_correctly(
-        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
-    ) -> Dict[Text, Any]:
-        intent = tracker.get_intent_of_latest_message()
-        return {"name_spelled_correctly": intent == "affirm"}
+                if "name_spelled_correctly" not in domain_slots:
+                    print("slot `name_spelled_correctly` added!")
+                    return ["name_spelled_correctly"] + domain_slots
+        return domain_slots
 
     def validate_name_spelled_correctly(
         self,
@@ -40,6 +37,8 @@ class ValidateNameForm(FormValidationAction):
         domain: DomainDict,
     ) -> Dict[Text, Any]:
         """Validate `first_name` value."""
+        print(tracker.get_slot("first_name"))
+        print(tracker.get_slot("name_spelled_correctly"))
         if tracker.get_slot("name_spelled_correctly"):
             return {"first_name": tracker.get_slot("first_name"), "name_spelled_correctly": True}
         return {"first_name": None, "name_spelled_correctly": None}
