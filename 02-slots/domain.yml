@@ -4,6 +4,7 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - give_shirt_size
+- repeat_shirt_size
 - greet
 - goodbye
 - mood_great
