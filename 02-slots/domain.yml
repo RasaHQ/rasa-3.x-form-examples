@@ -3,12 +3,12 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- give_shirt_size
 - repeat_shirt_size
-- greet
+- give_shirt_size
 - goodbye
-- mood_great
+- greet
 - tell_shirt_size
+- mood_great
 - repeat_name
 - affirm
 - deny

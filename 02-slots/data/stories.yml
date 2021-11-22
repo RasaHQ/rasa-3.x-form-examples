@@ -43,3 +43,22 @@ stories:
   - action: action_say_shirt_size
   - intent: goodbye
   - action: utter_goodbye
+
+- story: give name story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: repeat_shirt_size
+  - action: action_say_shirt_size
+  - intent: tell_shirt_size
+  - action: utter_ask_shirt_size
+  - intent: give_shirt_size
+    entities:
+    - shirt_size: large
+  - slot_was_set:
+    - shirt_size: large
+  - action: action_receive_shirt_size
+  - intent: repeat_shirt_size
+  - action: action_say_shirt_size
+  - intent: goodbye
+  - action: utter_goodbye
