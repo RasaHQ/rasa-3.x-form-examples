@@ -8,14 +8,14 @@ from rasa_sdk.executor import CollectingDispatcher
 class ActionReceiveShirtSize(Action):
 
     def name(self) -> Text:
-        return "action_receive_shirt"
+        return "action_receive_shirt_size"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         text = tracker.latest_message['text']
-        dispatcher.utter_message(text=f"I'll remember your shirt {text}!")
+        dispatcher.utter_message(text=f"I'll remember that your shirt size is {text}!")
         return [SlotSet("shirt_size", text)]
 
 
