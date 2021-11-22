@@ -5,32 +5,32 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
 
-class ActionReceiveName(Action):
+class ActionReceiveShirtSize(Action):
 
     def name(self) -> Text:
-        return "action_receive_name"
+        return "action_receive_shirt"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         text = tracker.latest_message['text']
-        dispatcher.utter_message(text=f"I'll remember your name {text}!")
-        return [SlotSet("name", text)]
+        dispatcher.utter_message(text=f"I'll remember your shirt {text}!")
+        return [SlotSet("shirt_size", text)]
 
 
-class ActionSayName(Action):
+class ActionSayShirtSize(Action):
 
     def name(self) -> Text:
-        return "action_say_name"
+        return "action_say_shirt_size"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
-        if not name:
-            dispatcher.utter_message(text="I don't know your name.")
+        shirt_size = tracker.get_slot("shirt_size")
+        if not shirt_size:
+            dispatcher.utter_message(text="I don't know your shirt size.")
         else:
-            dispatcher.utter_message(text=f"Your name is {name}!")
+            dispatcher.utter_message(text=f"Your shirt size is {shirt_size}!")
         return []

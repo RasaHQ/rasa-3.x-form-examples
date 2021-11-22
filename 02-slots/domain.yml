@@ -1,24 +1,27 @@
-version: '2.0'
+version: '3.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- give_shirt_size
 - greet
-- mood_great
-- tell_name
-- give_name
 - goodbye
+- mood_great
+- tell_shirt_size
 - repeat_name
 - affirm
 - deny
 - mood_unhappy
 - bot_challenge
+entities:
+- shirt_size
 slots:
-  name:
+  shirt_size:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_text
+    - type: from_entity
+      entity: shirt_size
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -33,12 +36,12 @@ responses:
   - text: Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-  utter_ask_name:
-  - text: What is your name?
+  utter_ask_shirt_size:
+  - text: What is your shirt size?
 actions:
-- action_receive_name
-- action_say_name
-- utter_ask_name
+- action_receive_shirt_size
+- action_say_shirt_size
+- utter_ask_shirt_size
 - utter_goodbye
 - utter_greet
 - utter_happy
