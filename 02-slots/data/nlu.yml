@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.0"
 nlu:
 - intent: greet
   examples: |
@@ -15,6 +15,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - hi there
 - intent: goodbye
   examples: |
     - good afternoon
@@ -28,6 +29,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - thanks, bye
 - intent: affirm
   examples: |
     - yes
@@ -85,22 +87,29 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-- intent: tell_name
+- intent: tell_shirt_size
   examples: |
     - i want to tell you my name
     - give name
     - ill give you my name
     - do you want to know my name?
-- intent: repeat_name
+- intent: repeat_shirt_size
   examples: |
     - what is my name
     - tell me my name
     - do you know my name
     - repeat my name
-- intent: give_name
+- intent: give_shirt_size
   examples: |
-    - vincent
-    - rachael
-    - emma
-    - juste
-    - jenny
+    - i want a [large](shirt_size) shirt
+    - [medium](shirt_size) size
+    - give me a [small](shirt_size) tshirt
+    - [small](shirt_size)
+    - [medium](shirt_size)
+    - [large](shirt_size)
+    - i'd prefer [medium](shirt_size) size
+    - gimme gimme gimme [small](shirt_size) tshirt
+    - give shirt size
+    - i want a [large](shirt_size) shirt please
+    - i want to give you my shirt
+    - [medium](shirt_size)

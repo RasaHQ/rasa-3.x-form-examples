@@ -29,49 +29,32 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: name path
+- story: give name story 1
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: tell_name
-  - action: utter_ask_name
-  - intent: give_name
-  - action: action_receive_name
-  - intent: repeat_name
-  - action: action_say_name
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: tell_name
-  - action: utter_ask_name
-  - intent: give_name
-  - action: action_receive_name
+  - intent: give_shirt_size
+  - action: utter_ask_shirt_size
+  - intent: give_shirt_size
+    entities:
+    - shirt_size: large
   - slot_was_set:
-    - name: vincent
-  - intent: repeat_name
-  - action: action_say_name
-  - intent: tell_name
-  - action: utter_ask_name
-  - intent: give_name
-  - action: action_receive_name
-  - slot_was_set:
-    - name: jenny
-  - intent: repeat_name
-  - action: action_say_name
+    - shirt_size: large
+  - action: action_receive_shirt_size
+  - intent: give_shirt_size
+  - action: action_say_shirt_size
   - intent: goodbye
   - action: utter_goodbye
 
-- story: interactive_story_1
+- story: give name story 2
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-  - intent: tell_name
-  - action: utter_ask_name
-  - intent: give_name
-  - action: action_receive_name
+  - intent: give_shirt_size
+  - action: utter_ask_shirt_size
+  - intent: give_shirt_size
+    entities:
+    - shirt_size: medium
   - slot_was_set:
-    - name: vincent
+    - shirt_size: medium
+  - action: action_receive_shirt_size
+  - intent: give_shirt_size
+  - action: action_say_shirt_size
