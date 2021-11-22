@@ -5,9 +5,9 @@ session_config:
 intents:
 - repeat_shirt_size
 - ask_me_anything
+- give_shirt_size
 - goodbye
 - greet
-- tell_shirt_size
 - mood_great
 - repeat_name
 - affirm
@@ -48,3 +48,4 @@ actions:
 - utter_goodbye
 - utter_greet
 - utter_happy
+- utter_remember

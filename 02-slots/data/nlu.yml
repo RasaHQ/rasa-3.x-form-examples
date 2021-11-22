@@ -92,7 +92,7 @@ nlu:
     - ask me anything
     - would you like to ask me something
     - feel free to ask me about things
-    - want to ask me something? 
+    - want to ask me something?
 - intent: repeat_shirt_size
   examples: |
     - what is my shirt size
