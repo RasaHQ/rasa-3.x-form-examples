@@ -14,9 +14,9 @@ class ActionReceiveShirtSize(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        text = tracker.latest_message['text']
-        dispatcher.utter_message(text=f"I'll remember that your shirt size is {text}!")
-        return [SlotSet("shirt_size", text)]
+        shirt_size = tracker.get_slot("shirt_size")
+        dispatcher.utter_message(text=f"I'll remember that your shirt size is {shirt_size}!")
+        return []
 
 
 class ActionSayShirtSize(Action):
