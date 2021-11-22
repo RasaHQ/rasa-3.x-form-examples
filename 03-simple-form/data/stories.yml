@@ -29,7 +29,7 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: interactive_story_1
+- story: interactive story 1
   steps:
   - intent: greet
   - action: utter_greet
