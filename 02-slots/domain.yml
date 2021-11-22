@@ -4,7 +4,7 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - repeat_shirt_size
-- give_shirt_size
+- ask_me_anything
 - goodbye
 - greet
 - tell_shirt_size
@@ -39,6 +39,8 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_ask_shirt_size:
   - text: What is your shirt size?
+  utter_remember:
+  - text: Thanks. I'll remember that.
 actions:
 - action_receive_shirt_size
 - action_say_shirt_size

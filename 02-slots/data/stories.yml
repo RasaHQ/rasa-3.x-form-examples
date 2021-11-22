@@ -31,14 +31,14 @@ stories:
 
 - story: give name story 1
   steps:
-  - intent: tell_shirt_size
+  - intent: ask_me_anything
   - action: utter_ask_shirt_size
   - intent: give_shirt_size
     entities:
     - shirt_size: large
   - slot_was_set:
     - shirt_size: large
-  - action: action_receive_shirt_size
+  - action: utter_remember
   - intent: repeat_shirt_size
   - action: action_say_shirt_size
   - intent: goodbye
@@ -50,14 +50,14 @@ stories:
   - action: utter_greet
   - intent: repeat_shirt_size
   - action: action_say_shirt_size
-  - intent: tell_shirt_size
+  - intent: ask_me_anything
   - action: utter_ask_shirt_size
   - intent: give_shirt_size
     entities:
     - shirt_size: large
   - slot_was_set:
     - shirt_size: large
-  - action: action_receive_shirt_size
+  - action: utter_remember
   - intent: repeat_shirt_size
   - action: action_say_shirt_size
   - intent: goodbye
