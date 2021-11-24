@@ -1,0 +1,53 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_me_anything
+  - action: shirt_size_form
+  - active_loop: shirt_size_form
+  - slot_was_set:
+    - requested_slot: shirt_size
+  - slot_was_set:
+    - shirt_size: medium
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_remember
+  - intent: repeat_shirt_size
+  - action: utter_happy
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: mood_unhappy
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye

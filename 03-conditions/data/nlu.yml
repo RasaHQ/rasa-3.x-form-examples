@@ -1,0 +1,117 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi there
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thanks, bye
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - good
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - i am sad
+    - medium. i feel sad
+    - it did
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: ask_me_anything
+  examples: |
+    - ask me anything
+    - would you like to ask me something
+    - feel free to ask me about things
+    - want to ask me something?
+- intent: repeat_shirt_size
+  examples: |
+    - what is my shirt size
+    - tell me my shirt size
+    - do you know my shirt size
+    - repeat my shirt size
+- intent: give_shirt_size
+  examples: |
+    - i want a [large](shirt_size) shirt
+    - [medium](shirt_size) size
+    - give me a [small](shirt_size) tshirt
+    - [small](shirt_size)
+    - [medium](shirt_size)
+    - [large](shirt_size)
+    - i'd prefer [medium](shirt_size) size
+    - gimme gimme gimme [small](shirt_size) tshirt
+    - give shirt size
+    - i want a [large](shirt_size) shirt please
+    - i want to give you my shirt
+    - [medium](shirt_size)
