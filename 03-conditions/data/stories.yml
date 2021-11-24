@@ -82,7 +82,7 @@ stories:
   - intent: affirm
   - action: utter_happy
 
-- story: interactive_story_1
+- story: interactive story 3
   steps:
   - intent: greet
   - action: utter_greet
