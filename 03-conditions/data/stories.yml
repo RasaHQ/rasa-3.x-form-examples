@@ -29,7 +29,7 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: interactive_story_1
+- story: interactive story 1
   steps:
   - intent: ask_me_anything
   - action: shirt_size_form
@@ -51,3 +51,47 @@ stories:
   - action: utter_happy
   - intent: goodbye
   - action: utter_goodbye
+
+- story: interactive story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: repeat_shirt_size
+  - action: action_say_shirt_size
+  - intent: ask_me_anything
+  - action: shirt_size_form
+  - active_loop: shirt_size_form
+  - slot_was_set:
+    - requested_slot: shirt_size
+  - slot_was_set:
+    - shirt_size: large
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_remember
+  - intent: repeat_shirt_size
+  - action: action_say_shirt_size
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+    entities:
+    - shirt_size: medium
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: repeat_shirt_size
+  - action: action_say_shirt_size
