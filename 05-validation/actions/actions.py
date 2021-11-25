@@ -26,7 +26,7 @@ class ValidateNameForm(FormValidationAction):
         if len(name) == 0:
             dispatcher.utter_message(text="That must've been a typo.")
             return {"first_name": None}
-        return {"first_name": slot_value}
+        return {"first_name": name}
 
     def validate_last_name(
         self,
@@ -47,4 +47,4 @@ class ValidateNameForm(FormValidationAction):
         if len(first_name) + len(name) < 3:
             dispatcher.utter_message(text="That's a very short name. We fear a typo. Restarting!")
             return {"first_name": None, "last_name": None}
-        return {"last_name": slot_value}
+        return {"last_name": name}
