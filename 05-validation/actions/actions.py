@@ -5,6 +5,9 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 
 
+def clean_name(name):
+    return "".join([c for c in name if c.isalpha()])
+
 class ValidateNameForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_name_form"
@@ -19,12 +22,11 @@ class ValidateNameForm(FormValidationAction):
         """Validate `first_name` value."""
 
         # If the name is super short, it might be wrong.
-        print(f"First name given = {slot_value} length = {len(slot_value)}")
-        if len(slot_value) <= 2:
-            dispatcher.utter_message(text=f"That's a very short name. I'm assuming you mis-spelled.")
+        name = clean_name(slot_value)
+        if len(name) == 0:
+            dispatcher.utter_message(text="That must've been a typo.")
             return {"first_name": None}
-        else:
-            return {"first_name": slot_value}
+        return {"first_name": slot_value}
 
     def validate_last_name(
         self,
@@ -36,9 +38,13 @@ class ValidateNameForm(FormValidationAction):
         """Validate `last_name` value."""
 
         # If the name is super short, it might be wrong.
-        print(f"Last name given = {slot_value} length = {len(slot_value)}")
-        if len(slot_value) <= 2:
-            dispatcher.utter_message(text=f"That's a very short name. I'm assuming you mis-spelled.")
+        name = clean_name(slot_value)
+        if len(name) == 0:
+            dispatcher.utter_message(text="That must've been a typo.")
             return {"last_name": None}
-        else:
-            return {"last_name": slot_value}
+        
+        first_name = tracker.get_slot("first_name")
+        if len(first_name) + len(name) < 3:
+            dispatcher.utter_message(text="That's a very short name. We fear a typo. Restarting!")
+            return {"first_name": None, "last_name": None}
+        return {"last_name": slot_value}
