@@ -22,30 +22,20 @@ It helps to understand custom actions and slots before we talk about forms. In t
 
 Code can be found in the `02-slots` folder.
 
-## 3. Simple Forms
+## 3. Simple Forms with Conditional Slots
 
-If we want to query multiple things from the user, it may be best to use forms instead of custom actions. Luckily for us, we can use our `RulePolicy` to help us out.
+If we want to query multiple things from the user, it may be best to use forms instead of custom actions. Luckily for us, we can use our `RulePolicy` to help us out and we can configure our slots to ignore entities mentioned outside of our form.
 
-Code can be found in the `03-simple-forms` folder. 
+Code can be found in the `03-conditions` folder. 
 
-## 4. Asking Questions 
+## 4. From Text
 
-You can customise how questions are asked in a form. You can write templates in a domain.yml file or use custom actions.
+You can fill slots from many types of input, this includes raw text! 
+
+Code can be found in the `04-from-text` folder.
 
 ## 5. Form Validation 
 
 What if we want to validate the input of our form? We don't want to have a name that's an empty string after all! 
 
-Code can be found in the `04-checking-form-input` folder.
-
-## 5. Entities and Forms
-
-The user might give the response in a sentence, in which case we'll want to detect entities instead of grabbing the full text.
-
-Code can be found in the `05-entities-and-forms` folder.
-
-## 6. Expanding Forms
-
-The user might give the response in a sentence, in which case we'll want to detect entities instead of grabbing the full text.
-
-Code can be found in the `06-expanding-forms` folder.
+Code can be found in the `05-validation` folder.
