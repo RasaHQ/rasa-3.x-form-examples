@@ -2,6 +2,8 @@
 
 #  Rasa 3.x Form Examples
 
+This repository is part of our Rasa Forms course that's hosted on our [learning center](https://learning.rasa.com/).
+
 ## Installation 
 
 To run all the examples here you'll need to install Rasa, preferably in a virtualenv in the root directory. 
