@@ -12,18 +12,18 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Activate form
-  steps:
-  - intent: ask_me_anything
-  - action: shirt_size_form
-  - active_loop: shirt_size_form
+# - rule: Activate form
+#   steps:
+#   - intent: ask_me_anything
+#   - action: shirt_size_form
+#   - active_loop: shirt_size_form
 
-- rule: Submit form
-  condition:
-  - active_loop: shirt_size_form
-  steps:
-  - action: shirt_size_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_remember
+# - rule: Submit form
+#   condition:
+#   - active_loop: shirt_size_form
+#   steps:
+#   - action: shirt_size_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: utter_remember

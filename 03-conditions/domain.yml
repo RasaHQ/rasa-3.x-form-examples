@@ -23,8 +23,7 @@ slots:
     mappings:
     - type: from_entity
       entity: shirt_size
-      conditions:
-      - active_loop: shirt_size_form
+
 forms:
   shirt_size_form:
     required_slots:
@@ -46,7 +45,9 @@ responses:
   utter_ask_shirt_size:
   - text: What is your shirt size?
   utter_remember:
-  - text: Thanks. I'll remember that.
+  - text: Thanks. I'll remember that your shirt_size is {shirt_size}.
+  utter_blah:
+  - text: This is an utter_blah response for {shirt_size}
 actions:
 - action_say_shirt_size
 - utter_ask_shirt_size
